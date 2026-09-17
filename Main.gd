@@ -14,3 +14,5 @@ func _ready() -> void:
 func _on_coin_collected() -> void:
 	score += 1
 	score_label.text = str(score)
+
+

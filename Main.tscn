@@ -1,4 +1,4 @@
-[gd_scene load_steps=349 format=2]
+[gd_scene load_steps=351 format=2]
 
 [ext_resource path="res://art/background/Background.png" type="Texture" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -342,6 +342,7 @@
 [ext_resource path="res://art/bird/Bird-315.png" type="Texture" id=340]
 [ext_resource path="res://art/bird/Bird-316.png" type="Texture" id=341]
 [ext_resource path="res://art/bird/Bird-317.png" type="Texture" id=342]
+[ext_resource path="res://MashButtonEvent.gd" type="Script" id=343]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 160, 14 )
@@ -365,6 +366,8 @@ animations = [ {
 "name": "default",
 "speed": 7.0
 } ]
+
+[sub_resource type="RectangleShape2D" id=7]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 8 )
@@ -467,5 +470,16 @@ valign = 2
 position = Vector2( 0, -90 )
 z_index = -75
 frames = SubResource( 6 )
-frame = 236
+frame = 211
 playing = true
+
+[node name="MashButtonEvent" type="Node2D" parent="."]
+script = ExtResource( 343 )
+
+[node name="Trigger" type="Area2D" parent="MashButtonEvent"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MashButtonEvent/Trigger"]
+position = Vector2( 31, -40 )
+shape = SubResource( 7 )
+
+[connection signal="body_entered" from="MashButtonEvent/Trigger" to="MashButtonEvent" method="_on_Trigger_body_entered"]
