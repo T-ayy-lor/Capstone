@@ -6,7 +6,7 @@ var required_jumps: int = 20
 
 var player = null
 var saved_position: Vector2
-
+onready var dimension_spawn: Position2D = get_node("../DimensionSpawn")
 onready var mash_label: Label = $MashLabel
 
 
@@ -40,7 +40,7 @@ func _process(delta: float) -> void:
 			if jump_count >= required_jumps:
 				event_active = false
 
-				player.position = saved_position
+				player.position = get_node("../DimensionSpawn").position
 				player.event_mode = false
 
 				mash_label.visible = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=351 format=2]
+[gd_scene load_steps=352 format=2]
 
 [ext_resource path="res://art/background/Background.png" type="Texture" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -369,6 +369,8 @@ animations = [ {
 
 [sub_resource type="RectangleShape2D" id=7]
 
+[sub_resource type="RectangleShape2D" id=8]
+
 [node name="Main" type="Node2D"]
 script = ExtResource( 8 )
 
@@ -470,7 +472,7 @@ valign = 2
 position = Vector2( 0, -90 )
 z_index = -75
 frames = SubResource( 6 )
-frame = 93
+frame = 253
 playing = true
 
 [node name="MashButtonEvent" type="Node2D" parent="."]
@@ -489,7 +491,14 @@ margin_right = -11.0
 margin_bottom = -10.0
 text = "MASH SPACE! 0/20"
 
-[node name="DimensionalSpawn" type="Position2D" parent="."]
-position = Vector2( 911, -326 )
+[node name="DimensionSpawn" type="Position2D" parent="."]
+position = Vector2( 3500, 300 )
+
+[node name="DimensionArea" type="Area2D" parent="."]
+position = Vector2( 3500, 300 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DimensionArea"]
+position = Vector2( 3000, 30 )
+shape = SubResource( 8 )
 
 [connection signal="body_entered" from="MashButtonEvent/Trigger" to="MashButtonEvent" method="_on_Trigger_body_entered"]
