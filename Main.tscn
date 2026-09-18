@@ -470,7 +470,7 @@ valign = 2
 position = Vector2( 0, -90 )
 z_index = -75
 frames = SubResource( 6 )
-frame = 211
+frame = 93
 playing = true
 
 [node name="MashButtonEvent" type="Node2D" parent="."]
@@ -481,5 +481,15 @@ script = ExtResource( 343 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MashButtonEvent/Trigger"]
 position = Vector2( 31, -40 )
 shape = SubResource( 7 )
+
+[node name="MashLabel" type="Label" parent="MashButtonEvent"]
+margin_left = -129.0
+margin_top = -24.0
+margin_right = -11.0
+margin_bottom = -10.0
+text = "MASH SPACE! 0/20"
+
+[node name="DimensionalSpawn" type="Position2D" parent="."]
+position = Vector2( 911, -326 )
 
 [connection signal="body_entered" from="MashButtonEvent/Trigger" to="MashButtonEvent" method="_on_Trigger_body_entered"]
