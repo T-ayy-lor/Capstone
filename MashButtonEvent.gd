@@ -7,7 +7,7 @@ var required_jumps: int = 20
 
 var player = null
 var saved_position: Vector2
-onready var dimension_spawn: Position2D = get_node("../DimensionSpawn")
+onready var dimension_spawn: Position2D = get_node("../MashButtonDimensionSpawn")
 onready var mash_label: Label = $MashLabel
 
 

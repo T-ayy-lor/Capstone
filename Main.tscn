@@ -473,7 +473,7 @@ valign = 2
 position = Vector2( 0, -90 )
 z_index = -75
 frames = SubResource( 6 )
-frame = 89
+frame = 271
 playing = true
 
 [node name="MashButtonEvent" type="Node2D" parent="."]
@@ -482,8 +482,14 @@ script = ExtResource( 343 )
 [node name="Trigger" type="Area2D" parent="MashButtonEvent"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MashButtonEvent/Trigger"]
+modulate = Color( 0, 0, 0, 1 )
+self_modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 31, -40 )
 shape = SubResource( 7 )
+
+[node name="Polygon2D" type="Polygon2D" parent="MashButtonEvent/Trigger"]
+modulate = Color( 0.654902, 0.188235, 0.823529, 1 )
+polygon = PoolVector2Array( 21, -50, 21, -31, 40, -31, 41, -50 )
 
 [node name="MashLabel" type="Label" parent="MashButtonEvent"]
 margin_left = 1441.0
@@ -492,16 +498,16 @@ margin_right = 1559.0
 margin_bottom = -277.0
 text = "MASH SPACE! 0/20"
 
-[node name="DimensionSpawn" type="Position2D" parent="."]
+[node name="MashButtonDimensionSpawn" type="Position2D" parent="."]
 position = Vector2( 1500, -250 )
 
-[node name="DimensionArea" type="Area2D" parent="."]
+[node name="MashButtonDimensionArea" type="Area2D" parent="."]
 position = Vector2( 1500, -100 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DimensionArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MashButtonDimensionArea"]
 shape = SubResource( 8 )
 
-[node name="Line2D" type="Line2D" parent="DimensionArea"]
+[node name="Line2D" type="Line2D" parent="MashButtonDimensionArea"]
 position = Vector2( 1.49998, -170 )
 scale = Vector2( 0.247541, 0.6 )
 points = PoolVector2Array( -300, -75, 300, -75, 300, 75, -300, 75, -300, -75 )
@@ -509,4 +515,4 @@ width = 5.0
 default_color = Color( 0, 0, 0, 1 )
 
 [connection signal="body_entered" from="MashButtonEvent/Trigger" to="MashButtonEvent" method="_on_Trigger_body_entered"]
-[connection signal="body_shape_entered" from="DimensionArea" to="MashButtonEvent" method="_on_DimensionArea_body_shape_entered"]
+[connection signal="body_shape_entered" from="MashButtonDimensionArea" to="MashButtonEvent" method="_on_DimensionArea_body_shape_entered"]
