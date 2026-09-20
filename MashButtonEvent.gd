@@ -27,7 +27,7 @@ func _on_Trigger_body_entered(body):
 
 		body.event_mode = true
 
-		mash_label.text = "MASH SPACE! " + str(jump_count) + "/20"
+		mash_label.text = "MASH JUMP! " + str(jump_count) + "/20"
 		mash_label.visible = true
 
 
@@ -36,7 +36,7 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("jump"):
 			jump_count += 1
 
-			mash_label.text = "MASH SPACE! " + str(jump_count) + "/20"
+			mash_label.text = "MASH JUMP! " + str(jump_count) + "/20"
 
 			print("Jump presses: ", jump_count)
 
