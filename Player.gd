@@ -1,13 +1,50 @@
 extends KinematicBody2D
 
+# -----------------------------------------------------------
+# PLAYER MOVEMENTS SETTINGS
+# THESE values are shown in the INSPECTOR because of export"
+# You can change them there without editing the code
+# -----------------------------------------------------------
+
+#Horizontal movement speed in pixles per sec.
 export var speed: float = 60.0
+
+# Strength of the upward jump
+# Code uses "jump_force" because negative Y moves upward in 2D Godot.
 export var jump_force: float = 220.0
+
+# Downward acceleration top every physics frame.
 export var gravity: float = 700.0
 
+# ------------------------------------------------------------
+# BIOME BASE VALUES
+# These store the original/default player movement values.
+# We need them so the player can return to normal after leaving
+# a biome or can receive a different biome's effect.
+# ------------------------------------------------------------
+
+var base_speed: float
+var base_jump_force: float
+var base_gravity: float
+
+# ------------------------------------------------------------
+# PLAYER STATE VARIABLES
+# ------------------------------------------------------------
+
+# Velocity stores player movement:
+# velocity.x = left/right movement
+# velocity.y = upward/downward movement
 var velocity: Vector2 = Vector2.ZERO
 
+# Gets the AnimatedSprite child node from Player.tscn.
+# This is used to play the idle and walk animations.
 onready var sprite: AnimatedSprite = $AnimatedSprite
 
+# ------------------------------------------------------------
+# PHYSICS PROCESS
+# Runs at a fixed physics rate.
+# Player movement, gravity, jumping, and collision belong here.
+# ------------------------------------------------------------
 
 func _physics_process(delta: float) -> void:
 	var direction: float = 0.0

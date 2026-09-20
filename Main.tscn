@@ -503,5 +503,5 @@ valign = 2
 position = Vector2( 0, -90 )
 z_index = -75
 frames = SubResource( 6 )
-frame = 197
+frame = 214
 playing = true
