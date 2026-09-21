@@ -6,7 +6,7 @@ onready var score_label: Label = $HUD/ScoreLabel
 
 onready var cave_darkness: ColorRect = $WorldDarknessLayer/CaveDarkness
 
-var current_biome: String = "Desert"
+var current_biome: String = "Normal"
 var current_effect: String = "Normal movement"
 
 

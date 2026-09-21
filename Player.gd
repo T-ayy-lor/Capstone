@@ -147,6 +147,6 @@ func reset_biome_effects() -> void:
 	gravity = base_gravity
 
 	# Reset visible HUD text to default Desert information.
-	get_parent().set_biome_hud("Desert", "Normal movement")
+	get_parent().set_biome_hud("Normal", "Normal movement")
 
-	print("Returned to Desert / normal movement")
+	print("Returned to Normal / normal movement")
