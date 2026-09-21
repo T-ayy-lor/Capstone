@@ -525,7 +525,7 @@ valign = 2
 position = Vector2( 0, -90 )
 z_index = -75
 frames = SubResource( 6 )
-frame = 239
+frame = 240
 playing = true
 
 [node name="SnowBiome" type="Area2D" parent="."]
