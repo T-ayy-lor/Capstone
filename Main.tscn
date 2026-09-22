@@ -106,7 +106,6 @@ texture = ExtResource( 3 )
 centered = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
-visible = false
 polygon = PoolVector2Array( 0, 0, 58, 0, 59, 1, 71, 1, 72, 2, 79, 2, 80, 3, 87, 3, 88, 4, 130, 4, 131, 3, 143, 3, 144, 2, 151, 2, 152, 1, 160, 1, 161, 0, 260, 0, 261, 1, 268, 1, 269, 2, 276, 2, 277, 3, 285, 3, 286, 4, 311, 4, 312, 3, 332, 3, 333, 2, 341, 2, 342, 1, 372, 1, 373, 0, 400, 0, 400, 55, 0, 55 )
 
 [node name="Ground2" type="StaticBody2D" parent="."]
@@ -118,7 +117,6 @@ texture = ExtResource( 3 )
 centered = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground2"]
-visible = false
 polygon = PoolVector2Array( 0, 0, 58, 0, 59, 1, 71, 1, 72, 2, 79, 2, 80, 3, 87, 3, 88, 4, 130, 4, 131, 3, 143, 3, 144, 2, 151, 2, 152, 1, 160, 1, 161, 0, 260, 0, 261, 1, 268, 1, 269, 2, 276, 2, 277, 3, 285, 3, 286, 4, 311, 4, 312, 3, 332, 3, 333, 2, 341, 2, 342, 1, 372, 1, 373, 0, 400, 0, 400, 55, 0, 55 )
 
 [node name="Ground3" type="StaticBody2D" parent="."]
@@ -130,7 +128,6 @@ texture = ExtResource( 3 )
 centered = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground3"]
-visible = false
 polygon = PoolVector2Array( 0, 0, 58, 0, 59, 1, 71, 1, 72, 2, 79, 2, 80, 3, 87, 3, 88, 4, 130, 4, 131, 3, 143, 3, 144, 2, 151, 2, 152, 1, 160, 1, 161, 0, 260, 0, 261, 1, 268, 1, 269, 2, 276, 2, 277, 3, 285, 3, 286, 4, 311, 4, 312, 3, 332, 3, 333, 2, 341, 2, 342, 1, 372, 1, 373, 0, 400, 0, 400, 55, 0, 55 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
