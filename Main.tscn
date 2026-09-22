@@ -1,456 +1,357 @@
-[gd_scene load_steps=349 format=2]
+[gd_scene load_steps=35 format=2]
 
-[ext_resource path="res://art/background/Background.png" type="Texture" id=1]
+[ext_resource path="res://art/biomes/Bg & Foreground/BG Sky.png" type="Texture" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://art/foreground/Ground.png" type="Texture" id=3]
-[ext_resource path="res://art/foreground/Platform.png" type="Texture" id=4]
-[ext_resource path="res://Clouds.gd" type="Script" id=5]
-[ext_resource path="res://art/foreground/Clouds.png" type="Texture" id=6]
-[ext_resource path="res://Coin.tscn" type="PackedScene" id=7]
+[ext_resource path="res://art/biomes/Bg & Foreground/Foreground.png" type="Texture" id=3]
+[ext_resource path="res://art/biomes/Bg & Foreground/Bg1.png" type="Texture" id=4]
+[ext_resource path="res://art/biomes/Bg & Foreground/Bg2.png" type="Texture" id=5]
+[ext_resource path="res://art/biomes/Bg & Foreground/Bg3.png" type="Texture" id=6]
+[ext_resource path="res://art/biomes/Bg & Foreground/Sun.png" type="Texture" id=7]
 [ext_resource path="res://Main.gd" type="Script" id=8]
-[ext_resource path="res://art/fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=9]
-[ext_resource path="res://art/bird/Bird-219.png" type="Texture" id=10]
-[ext_resource path="res://art/bird/Bird-218.png" type="Texture" id=11]
-[ext_resource path="res://art/bird/Bird-220.png" type="Texture" id=12]
-[ext_resource path="res://art/bird/Bird-221.png" type="Texture" id=13]
-[ext_resource path="res://art/bird/Bird-222.png" type="Texture" id=14]
-[ext_resource path="res://art/bird/Bird-223.png" type="Texture" id=15]
-[ext_resource path="res://art/bird/Bird-224.png" type="Texture" id=16]
-[ext_resource path="res://art/bird/Bird-225.png" type="Texture" id=17]
-[ext_resource path="res://art/bird/Bird-226.png" type="Texture" id=18]
-[ext_resource path="res://art/bird/Bird-227.png" type="Texture" id=19]
-[ext_resource path="res://art/bird/Bird-228.png" type="Texture" id=20]
-[ext_resource path="res://art/bird/Bird-229.png" type="Texture" id=21]
-[ext_resource path="res://art/bird/Bird-230.png" type="Texture" id=22]
-[ext_resource path="res://art/bird/Bird-231.png" type="Texture" id=23]
-[ext_resource path="res://art/bird/Bird-001.png" type="Texture" id=24]
-[ext_resource path="res://art/bird/Bird-003.png" type="Texture" id=25]
-[ext_resource path="res://art/bird/Bird-002.png" type="Texture" id=26]
-[ext_resource path="res://art/bird/Bird-018.png" type="Texture" id=27]
-[ext_resource path="res://art/bird/Bird-015.png" type="Texture" id=28]
-[ext_resource path="res://art/bird/Bird-016.png" type="Texture" id=29]
-[ext_resource path="res://art/bird/Bird-017.png" type="Texture" id=30]
-[ext_resource path="res://art/bird/Bird-012.png" type="Texture" id=31]
-[ext_resource path="res://art/bird/Bird-013.png" type="Texture" id=32]
-[ext_resource path="res://art/bird/Bird-014.png" type="Texture" id=33]
-[ext_resource path="res://art/bird/Bird-011.png" type="Texture" id=34]
-[ext_resource path="res://art/bird/Bird-005.png" type="Texture" id=35]
-[ext_resource path="res://art/bird/Bird-006.png" type="Texture" id=36]
-[ext_resource path="res://art/bird/Bird-004.png" type="Texture" id=37]
-[ext_resource path="res://art/bird/Bird-007.png" type="Texture" id=38]
-[ext_resource path="res://art/bird/Bird-008.png" type="Texture" id=39]
-[ext_resource path="res://art/bird/Bird-009.png" type="Texture" id=40]
-[ext_resource path="res://art/bird/Bird-010.png" type="Texture" id=41]
-[ext_resource path="res://art/bird/Bird-041.png" type="Texture" id=42]
-[ext_resource path="res://art/bird/Bird-042.png" type="Texture" id=43]
-[ext_resource path="res://art/bird/Bird-136.png" type="Texture" id=44]
-[ext_resource path="res://art/bird/Bird-137.png" type="Texture" id=45]
-[ext_resource path="res://art/bird/Bird-094.png" type="Texture" id=46]
-[ext_resource path="res://art/bird/Bird-115.png" type="Texture" id=47]
-[ext_resource path="res://art/bird/Bird-116.png" type="Texture" id=48]
-[ext_resource path="res://art/bird/Bird-117.png" type="Texture" id=49]
-[ext_resource path="res://art/bird/Bird-118.png" type="Texture" id=50]
-[ext_resource path="res://art/bird/Bird-119.png" type="Texture" id=51]
-[ext_resource path="res://art/bird/Bird-120.png" type="Texture" id=52]
-[ext_resource path="res://art/bird/Bird-103.png" type="Texture" id=53]
-[ext_resource path="res://art/bird/Bird-104.png" type="Texture" id=54]
-[ext_resource path="res://art/bird/Bird-105.png" type="Texture" id=55]
-[ext_resource path="res://art/bird/Bird-106.png" type="Texture" id=56]
-[ext_resource path="res://art/bird/Bird-107.png" type="Texture" id=57]
-[ext_resource path="res://art/bird/Bird-108.png" type="Texture" id=58]
-[ext_resource path="res://art/bird/Bird-109.png" type="Texture" id=59]
-[ext_resource path="res://art/bird/Bird-125.png" type="Texture" id=60]
-[ext_resource path="res://art/bird/Bird-126.png" type="Texture" id=61]
-[ext_resource path="res://art/bird/Bird-127.png" type="Texture" id=62]
-[ext_resource path="res://art/bird/Bird-128.png" type="Texture" id=63]
-[ext_resource path="res://art/bird/Bird-096.png" type="Texture" id=64]
-[ext_resource path="res://art/bird/Bird-097.png" type="Texture" id=65]
-[ext_resource path="res://art/bird/Bird-040.png" type="Texture" id=66]
-[ext_resource path="res://art/bird/Bird-019.png" type="Texture" id=67]
-[ext_resource path="res://art/bird/Bird-020.png" type="Texture" id=68]
-[ext_resource path="res://art/bird/Bird-021.png" type="Texture" id=69]
-[ext_resource path="res://art/bird/Bird-022.png" type="Texture" id=70]
-[ext_resource path="res://art/bird/Bird-023.png" type="Texture" id=71]
-[ext_resource path="res://art/bird/Bird-024.png" type="Texture" id=72]
-[ext_resource path="res://art/bird/Bird-025.png" type="Texture" id=73]
-[ext_resource path="res://art/bird/Bird-026.png" type="Texture" id=74]
-[ext_resource path="res://art/bird/Bird-027.png" type="Texture" id=75]
-[ext_resource path="res://art/bird/Bird-028.png" type="Texture" id=76]
-[ext_resource path="res://art/bird/Bird-029.png" type="Texture" id=77]
-[ext_resource path="res://art/bird/Bird-030.png" type="Texture" id=78]
-[ext_resource path="res://art/bird/Bird-031.png" type="Texture" id=79]
-[ext_resource path="res://art/bird/Bird-032.png" type="Texture" id=80]
-[ext_resource path="res://art/bird/Bird-033.png" type="Texture" id=81]
-[ext_resource path="res://art/bird/Bird-034.png" type="Texture" id=82]
-[ext_resource path="res://art/bird/Bird-035.png" type="Texture" id=83]
-[ext_resource path="res://art/bird/Bird-036.png" type="Texture" id=84]
-[ext_resource path="res://art/bird/Bird-037.png" type="Texture" id=85]
-[ext_resource path="res://art/bird/Bird-038.png" type="Texture" id=86]
-[ext_resource path="res://art/bird/Bird-039.png" type="Texture" id=87]
-[ext_resource path="res://art/bird/Bird-098.png" type="Texture" id=88]
-[ext_resource path="res://art/bird/Bird-121.png" type="Texture" id=89]
-[ext_resource path="res://art/bird/Bird-122.png" type="Texture" id=90]
-[ext_resource path="res://art/bird/Bird-123.png" type="Texture" id=91]
-[ext_resource path="res://art/bird/Bird-124.png" type="Texture" id=92]
-[ext_resource path="res://art/bird/Bird-095.png" type="Texture" id=93]
-[ext_resource path="res://art/bird/Bird-112.png" type="Texture" id=94]
-[ext_resource path="res://art/bird/Bird-113.png" type="Texture" id=95]
-[ext_resource path="res://art/bird/Bird-114.png" type="Texture" id=96]
-[ext_resource path="res://art/bird/Bird-043.png" type="Texture" id=97]
-[ext_resource path="res://art/bird/Bird-044.png" type="Texture" id=98]
-[ext_resource path="res://art/bird/Bird-045.png" type="Texture" id=99]
-[ext_resource path="res://art/bird/Bird-046.png" type="Texture" id=100]
-[ext_resource path="res://art/bird/Bird-047.png" type="Texture" id=101]
-[ext_resource path="res://art/bird/Bird-048.png" type="Texture" id=102]
-[ext_resource path="res://art/bird/Bird-049.png" type="Texture" id=103]
-[ext_resource path="res://art/bird/Bird-050.png" type="Texture" id=104]
-[ext_resource path="res://art/bird/Bird-051.png" type="Texture" id=105]
-[ext_resource path="res://art/bird/Bird-052.png" type="Texture" id=106]
-[ext_resource path="res://art/bird/Bird-053.png" type="Texture" id=107]
-[ext_resource path="res://art/bird/Bird-054.png" type="Texture" id=108]
-[ext_resource path="res://art/bird/Bird-055.png" type="Texture" id=109]
-[ext_resource path="res://art/bird/Bird-056.png" type="Texture" id=110]
-[ext_resource path="res://art/bird/Bird-057.png" type="Texture" id=111]
-[ext_resource path="res://art/bird/Bird-058.png" type="Texture" id=112]
-[ext_resource path="res://art/bird/Bird-059.png" type="Texture" id=113]
-[ext_resource path="res://art/bird/Bird-060.png" type="Texture" id=114]
-[ext_resource path="res://art/bird/Bird-061.png" type="Texture" id=115]
-[ext_resource path="res://art/bird/Bird-062.png" type="Texture" id=116]
-[ext_resource path="res://art/bird/Bird-063.png" type="Texture" id=117]
-[ext_resource path="res://art/bird/Bird-064.png" type="Texture" id=118]
-[ext_resource path="res://art/bird/Bird-065.png" type="Texture" id=119]
-[ext_resource path="res://art/bird/Bird-066.png" type="Texture" id=120]
-[ext_resource path="res://art/bird/Bird-067.png" type="Texture" id=121]
-[ext_resource path="res://art/bird/Bird-068.png" type="Texture" id=122]
-[ext_resource path="res://art/bird/Bird-069.png" type="Texture" id=123]
-[ext_resource path="res://art/bird/Bird-070.png" type="Texture" id=124]
-[ext_resource path="res://art/bird/Bird-071.png" type="Texture" id=125]
-[ext_resource path="res://art/bird/Bird-072.png" type="Texture" id=126]
-[ext_resource path="res://art/bird/Bird-073.png" type="Texture" id=127]
-[ext_resource path="res://art/bird/Bird-074.png" type="Texture" id=128]
-[ext_resource path="res://art/bird/Bird-075.png" type="Texture" id=129]
-[ext_resource path="res://art/bird/Bird-076.png" type="Texture" id=130]
-[ext_resource path="res://art/bird/Bird-077.png" type="Texture" id=131]
-[ext_resource path="res://art/bird/Bird-078.png" type="Texture" id=132]
-[ext_resource path="res://art/bird/Bird-079.png" type="Texture" id=133]
-[ext_resource path="res://art/bird/Bird-080.png" type="Texture" id=134]
-[ext_resource path="res://art/bird/Bird-081.png" type="Texture" id=135]
-[ext_resource path="res://art/bird/Bird-082.png" type="Texture" id=136]
-[ext_resource path="res://art/bird/Bird-083.png" type="Texture" id=137]
-[ext_resource path="res://art/bird/Bird-084.png" type="Texture" id=138]
-[ext_resource path="res://art/bird/Bird-085.png" type="Texture" id=139]
-[ext_resource path="res://art/bird/Bird-086.png" type="Texture" id=140]
-[ext_resource path="res://art/bird/Bird-087.png" type="Texture" id=141]
-[ext_resource path="res://art/bird/Bird-088.png" type="Texture" id=142]
-[ext_resource path="res://art/bird/Bird-089.png" type="Texture" id=143]
-[ext_resource path="res://art/bird/Bird-090.png" type="Texture" id=144]
-[ext_resource path="res://art/bird/Bird-091.png" type="Texture" id=145]
-[ext_resource path="res://art/bird/Bird-092.png" type="Texture" id=146]
-[ext_resource path="res://art/bird/Bird-093.png" type="Texture" id=147]
-[ext_resource path="res://art/bird/Bird-110.png" type="Texture" id=148]
-[ext_resource path="res://art/bird/Bird-111.png" type="Texture" id=149]
-[ext_resource path="res://art/bird/Bird-099.png" type="Texture" id=150]
-[ext_resource path="res://art/bird/Bird-100.png" type="Texture" id=151]
-[ext_resource path="res://art/bird/Bird-101.png" type="Texture" id=152]
-[ext_resource path="res://art/bird/Bird-102.png" type="Texture" id=153]
-[ext_resource path="res://art/bird/Bird-129.png" type="Texture" id=154]
-[ext_resource path="res://art/bird/Bird-130.png" type="Texture" id=155]
-[ext_resource path="res://art/bird/Bird-131.png" type="Texture" id=156]
-[ext_resource path="res://art/bird/Bird-132.png" type="Texture" id=157]
-[ext_resource path="res://art/bird/Bird-133.png" type="Texture" id=158]
-[ext_resource path="res://art/bird/Bird-134.png" type="Texture" id=159]
-[ext_resource path="res://art/bird/Bird-135.png" type="Texture" id=160]
-[ext_resource path="res://art/bird/Bird-145.png" type="Texture" id=161]
-[ext_resource path="res://art/bird/Bird-146.png" type="Texture" id=162]
-[ext_resource path="res://art/bird/Bird-147.png" type="Texture" id=163]
-[ext_resource path="res://art/bird/Bird-148.png" type="Texture" id=164]
-[ext_resource path="res://art/bird/Bird-149.png" type="Texture" id=165]
-[ext_resource path="res://art/bird/Bird-150.png" type="Texture" id=166]
-[ext_resource path="res://art/bird/Bird-151.png" type="Texture" id=167]
-[ext_resource path="res://art/bird/Bird-152.png" type="Texture" id=168]
-[ext_resource path="res://art/bird/Bird-153.png" type="Texture" id=169]
-[ext_resource path="res://art/bird/Bird-154.png" type="Texture" id=170]
-[ext_resource path="res://art/bird/Bird-155.png" type="Texture" id=171]
-[ext_resource path="res://art/bird/Bird-156.png" type="Texture" id=172]
-[ext_resource path="res://art/bird/Bird-157.png" type="Texture" id=173]
-[ext_resource path="res://art/bird/Bird-158.png" type="Texture" id=174]
-[ext_resource path="res://art/bird/Bird-165.png" type="Texture" id=175]
-[ext_resource path="res://art/bird/Bird-175.png" type="Texture" id=176]
-[ext_resource path="res://art/bird/Bird-176.png" type="Texture" id=177]
-[ext_resource path="res://art/bird/Bird-177.png" type="Texture" id=178]
-[ext_resource path="res://art/bird/Bird-185.png" type="Texture" id=179]
-[ext_resource path="res://art/bird/Bird-186.png" type="Texture" id=180]
-[ext_resource path="res://art/bird/Bird-187.png" type="Texture" id=181]
-[ext_resource path="res://art/bird/Bird-188.png" type="Texture" id=182]
-[ext_resource path="res://art/bird/Bird-189.png" type="Texture" id=183]
-[ext_resource path="res://art/bird/Bird-190.png" type="Texture" id=184]
-[ext_resource path="res://art/bird/Bird-191.png" type="Texture" id=185]
-[ext_resource path="res://art/bird/Bird-192.png" type="Texture" id=186]
-[ext_resource path="res://art/bird/Bird-193.png" type="Texture" id=187]
-[ext_resource path="res://art/bird/Bird-194.png" type="Texture" id=188]
-[ext_resource path="res://art/bird/Bird-195.png" type="Texture" id=189]
-[ext_resource path="res://art/bird/Bird-196.png" type="Texture" id=190]
-[ext_resource path="res://art/bird/Bird-197.png" type="Texture" id=191]
-[ext_resource path="res://art/bird/Bird-198.png" type="Texture" id=192]
-[ext_resource path="res://art/bird/Bird-199.png" type="Texture" id=193]
-[ext_resource path="res://art/bird/Bird-200.png" type="Texture" id=194]
-[ext_resource path="res://art/bird/Bird-201.png" type="Texture" id=195]
-[ext_resource path="res://art/bird/Bird-202.png" type="Texture" id=196]
-[ext_resource path="res://art/bird/Bird-203.png" type="Texture" id=197]
-[ext_resource path="res://art/bird/Bird-204.png" type="Texture" id=198]
-[ext_resource path="res://art/bird/Bird-205.png" type="Texture" id=199]
-[ext_resource path="res://art/bird/Bird-206.png" type="Texture" id=200]
-[ext_resource path="res://art/bird/Bird-207.png" type="Texture" id=201]
-[ext_resource path="res://art/bird/Bird-208.png" type="Texture" id=202]
-[ext_resource path="res://art/bird/Bird-209.png" type="Texture" id=203]
-[ext_resource path="res://art/bird/Bird-210.png" type="Texture" id=204]
-[ext_resource path="res://art/bird/Bird-211.png" type="Texture" id=205]
-[ext_resource path="res://art/bird/Bird-212.png" type="Texture" id=206]
-[ext_resource path="res://art/bird/Bird-213.png" type="Texture" id=207]
-[ext_resource path="res://art/bird/Bird-214.png" type="Texture" id=208]
-[ext_resource path="res://art/bird/Bird-215.png" type="Texture" id=209]
-[ext_resource path="res://art/bird/Bird-216.png" type="Texture" id=210]
-[ext_resource path="res://art/bird/Bird-217.png" type="Texture" id=211]
-[ext_resource path="res://art/bird/Bird-243.png" type="Texture" id=212]
-[ext_resource path="res://art/bird/Bird-244.png" type="Texture" id=213]
-[ext_resource path="res://art/bird/Bird-245.png" type="Texture" id=214]
-[ext_resource path="res://art/bird/Bird-246.png" type="Texture" id=215]
-[ext_resource path="res://art/bird/Bird-247.png" type="Texture" id=216]
-[ext_resource path="res://art/bird/Bird-248.png" type="Texture" id=217]
-[ext_resource path="res://art/bird/Bird-249.png" type="Texture" id=218]
-[ext_resource path="res://art/bird/Bird-250.png" type="Texture" id=219]
-[ext_resource path="res://art/bird/Bird-251.png" type="Texture" id=220]
-[ext_resource path="res://art/bird/Bird-252.png" type="Texture" id=221]
-[ext_resource path="res://art/bird/Bird-253.png" type="Texture" id=222]
-[ext_resource path="res://art/bird/Bird-254.png" type="Texture" id=223]
-[ext_resource path="res://art/bird/Bird-255.png" type="Texture" id=224]
-[ext_resource path="res://art/bird/Bird-256.png" type="Texture" id=225]
-[ext_resource path="res://art/bird/Bird-257.png" type="Texture" id=226]
-[ext_resource path="res://art/bird/Bird-258.png" type="Texture" id=227]
-[ext_resource path="res://art/bird/Bird-259.png" type="Texture" id=228]
-[ext_resource path="res://art/bird/Bird-260.png" type="Texture" id=229]
-[ext_resource path="res://art/bird/Bird-261.png" type="Texture" id=230]
-[ext_resource path="res://art/bird/Bird-262.png" type="Texture" id=231]
-[ext_resource path="res://art/bird/Bird-263.png" type="Texture" id=232]
-[ext_resource path="res://art/bird/Bird-264.png" type="Texture" id=233]
-[ext_resource path="res://art/bird/Bird-265.png" type="Texture" id=234]
-[ext_resource path="res://art/bird/Bird-266.png" type="Texture" id=235]
-[ext_resource path="res://art/bird/Bird-267.png" type="Texture" id=236]
-[ext_resource path="res://art/bird/Bird-268.png" type="Texture" id=237]
-[ext_resource path="res://art/bird/Bird-269.png" type="Texture" id=238]
-[ext_resource path="res://art/bird/Bird-270.png" type="Texture" id=239]
-[ext_resource path="res://art/bird/Bird-271.png" type="Texture" id=240]
-[ext_resource path="res://art/bird/Bird-272.png" type="Texture" id=241]
-[ext_resource path="res://art/bird/Bird-273.png" type="Texture" id=242]
-[ext_resource path="res://art/bird/Bird-274.png" type="Texture" id=243]
-[ext_resource path="res://art/bird/Bird-275.png" type="Texture" id=244]
-[ext_resource path="res://art/bird/Bird-276.png" type="Texture" id=245]
-[ext_resource path="res://art/bird/Bird-277.png" type="Texture" id=246]
-[ext_resource path="res://art/bird/Bird-278.png" type="Texture" id=247]
-[ext_resource path="res://art/bird/Bird-279.png" type="Texture" id=248]
-[ext_resource path="res://art/bird/Bird-280.png" type="Texture" id=249]
-[ext_resource path="res://art/bird/Bird-281.png" type="Texture" id=250]
-[ext_resource path="res://art/bird/Bird-282.png" type="Texture" id=251]
-[ext_resource path="res://art/bird/Bird-283.png" type="Texture" id=252]
-[ext_resource path="res://art/bird/Bird-284.png" type="Texture" id=253]
-[ext_resource path="res://art/bird/Bird-285.png" type="Texture" id=254]
-[ext_resource path="res://art/bird/Bird-286.png" type="Texture" id=255]
-[ext_resource path="res://art/bird/Bird-287.png" type="Texture" id=256]
-[ext_resource path="res://art/bird/Bird-288.png" type="Texture" id=257]
-[ext_resource path="res://art/bird/Bird-289.png" type="Texture" id=258]
-[ext_resource path="res://art/bird/Bird-290.png" type="Texture" id=259]
-[ext_resource path="res://art/bird/Bird-291.png" type="Texture" id=260]
-[ext_resource path="res://art/bird/Bird-292.png" type="Texture" id=261]
-[ext_resource path="res://art/bird/Bird-293.png" type="Texture" id=262]
-[ext_resource path="res://art/bird/Bird-294.png" type="Texture" id=263]
-[ext_resource path="res://art/bird/Bird-295.png" type="Texture" id=264]
-[ext_resource path="res://art/bird/Bird-296.png" type="Texture" id=265]
-[ext_resource path="res://art/bird/Bird-297.png" type="Texture" id=266]
-[ext_resource path="res://art/bird/Bird-298.png" type="Texture" id=267]
-[ext_resource path="res://art/bird/Bird-299.png" type="Texture" id=268]
-[ext_resource path="res://art/bird/Bird-300.png" type="Texture" id=269]
-[ext_resource path="res://art/bird/Bird-301.png" type="Texture" id=270]
-[ext_resource path="res://art/bird/Bird-302.png" type="Texture" id=271]
-[ext_resource path="res://art/bird/Bird-303.png" type="Texture" id=272]
-[ext_resource path="res://art/bird/Bird-318.png" type="Texture" id=273]
-[ext_resource path="res://art/bird/Bird-319.png" type="Texture" id=274]
-[ext_resource path="res://art/bird/Bird-320.png" type="Texture" id=275]
-[ext_resource path="res://art/bird/Bird-321.png" type="Texture" id=276]
-[ext_resource path="res://art/bird/Bird-322.png" type="Texture" id=277]
-[ext_resource path="res://art/bird/Bird-323.png" type="Texture" id=278]
-[ext_resource path="res://art/bird/Bird-324.png" type="Texture" id=279]
-[ext_resource path="res://art/bird/Bird-325.png" type="Texture" id=280]
-[ext_resource path="res://art/bird/Bird-326.png" type="Texture" id=281]
-[ext_resource path="res://art/bird/Bird-327.png" type="Texture" id=282]
-[ext_resource path="res://art/bird/Bird-328.png" type="Texture" id=283]
-[ext_resource path="res://art/bird/Bird-329.png" type="Texture" id=284]
-[ext_resource path="res://art/bird/Bird-330.png" type="Texture" id=285]
-[ext_resource path="res://art/bird/Bird-331.png" type="Texture" id=286]
-[ext_resource path="res://art/bird/Bird-332.png" type="Texture" id=287]
-[ext_resource path="res://art/bird/Bird-333.png" type="Texture" id=288]
-[ext_resource path="res://art/bird/Bird-138.png" type="Texture" id=289]
-[ext_resource path="res://art/bird/Bird-139.png" type="Texture" id=290]
-[ext_resource path="res://art/bird/Bird-140.png" type="Texture" id=291]
-[ext_resource path="res://art/bird/Bird-141.png" type="Texture" id=292]
-[ext_resource path="res://art/bird/Bird-142.png" type="Texture" id=293]
-[ext_resource path="res://art/bird/Bird-143.png" type="Texture" id=294]
-[ext_resource path="res://art/bird/Bird-144.png" type="Texture" id=295]
-[ext_resource path="res://art/bird/Bird-159.png" type="Texture" id=296]
-[ext_resource path="res://art/bird/Bird-160.png" type="Texture" id=297]
-[ext_resource path="res://art/bird/Bird-161.png" type="Texture" id=298]
-[ext_resource path="res://art/bird/Bird-162.png" type="Texture" id=299]
-[ext_resource path="res://art/bird/Bird-163.png" type="Texture" id=300]
-[ext_resource path="res://art/bird/Bird-164.png" type="Texture" id=301]
-[ext_resource path="res://art/bird/Bird-166.png" type="Texture" id=302]
-[ext_resource path="res://art/bird/Bird-167.png" type="Texture" id=303]
-[ext_resource path="res://art/bird/Bird-168.png" type="Texture" id=304]
-[ext_resource path="res://art/bird/Bird-169.png" type="Texture" id=305]
-[ext_resource path="res://art/bird/Bird-170.png" type="Texture" id=306]
-[ext_resource path="res://art/bird/Bird-171.png" type="Texture" id=307]
-[ext_resource path="res://art/bird/Bird-172.png" type="Texture" id=308]
-[ext_resource path="res://art/bird/Bird-173.png" type="Texture" id=309]
-[ext_resource path="res://art/bird/Bird-174.png" type="Texture" id=310]
-[ext_resource path="res://art/bird/Bird-178.png" type="Texture" id=311]
-[ext_resource path="res://art/bird/Bird-179.png" type="Texture" id=312]
-[ext_resource path="res://art/bird/Bird-180.png" type="Texture" id=313]
-[ext_resource path="res://art/bird/Bird-181.png" type="Texture" id=314]
-[ext_resource path="res://art/bird/Bird-182.png" type="Texture" id=315]
-[ext_resource path="res://art/bird/Bird-183.png" type="Texture" id=316]
-[ext_resource path="res://art/bird/Bird-184.png" type="Texture" id=317]
-[ext_resource path="res://art/bird/Bird-232.png" type="Texture" id=318]
-[ext_resource path="res://art/bird/Bird-233.png" type="Texture" id=319]
-[ext_resource path="res://art/bird/Bird-234.png" type="Texture" id=320]
-[ext_resource path="res://art/bird/Bird-235.png" type="Texture" id=321]
-[ext_resource path="res://art/bird/Bird-236.png" type="Texture" id=322]
-[ext_resource path="res://art/bird/Bird-237.png" type="Texture" id=323]
-[ext_resource path="res://art/bird/Bird-238.png" type="Texture" id=324]
-[ext_resource path="res://art/bird/Bird-239.png" type="Texture" id=325]
-[ext_resource path="res://art/bird/Bird-240.png" type="Texture" id=326]
-[ext_resource path="res://art/bird/Bird-241.png" type="Texture" id=327]
-[ext_resource path="res://art/bird/Bird-242.png" type="Texture" id=328]
-[ext_resource path="res://art/bird/Bird-304.png" type="Texture" id=329]
-[ext_resource path="res://art/bird/Bird-305.png" type="Texture" id=330]
-[ext_resource path="res://art/bird/Bird-306.png" type="Texture" id=331]
-[ext_resource path="res://art/bird/Bird-307.png" type="Texture" id=332]
-[ext_resource path="res://art/bird/Bird-308.png" type="Texture" id=333]
-[ext_resource path="res://art/bird/Bird-309.png" type="Texture" id=334]
-[ext_resource path="res://art/bird/Bird-310.png" type="Texture" id=335]
-[ext_resource path="res://art/bird/Bird-311.png" type="Texture" id=336]
-[ext_resource path="res://art/bird/Bird-312.png" type="Texture" id=337]
-[ext_resource path="res://art/bird/Bird-313.png" type="Texture" id=338]
-[ext_resource path="res://art/bird/Bird-314.png" type="Texture" id=339]
-[ext_resource path="res://art/bird/Bird-315.png" type="Texture" id=340]
-[ext_resource path="res://art/bird/Bird-316.png" type="Texture" id=341]
-[ext_resource path="res://art/bird/Bird-317.png" type="Texture" id=342]
+[ext_resource path="res://art/biomes/Clouds/Bottom Clouds (farthest)/All Bot Clouds.png" type="Texture" id=9]
+[ext_resource path="res://art/biomes/Clouds/Top Clouds (closest)/All Top Clouds.png" type="Texture" id=10]
+[ext_resource path="res://art/biomes/Clouds/Mid Clouds/All Mid Clouds.png" type="Texture" id=11]
+[ext_resource path="res://CloudDrift.gd" type="Script" id=12]
+[ext_resource path="res://art/biomes/Ground Clutter/Skull.png" type="Texture" id=13]
+[ext_resource path="res://art/biomes/Vegetation/Bush1.png" type="Texture" id=14]
+[ext_resource path="res://art/biomes/Vegetation/Cactus2.png" type="Texture" id=15]
+[ext_resource path="res://art/biomes/Vegetation/Cactus5.png" type="Texture" id=16]
+[ext_resource path="res://art/biomes/Ground Clutter/Rock2.png" type="Texture" id=17]
+[ext_resource path="res://art/biomes/Vegetation/Grass1.png" type="Texture" id=18]
+[ext_resource path="res://art/biomes/Vegetation/Cactus1.png" type="Texture" id=19]
+[ext_resource path="res://art/biomes/Vegetation/Cactus3special.png" type="Texture" id=20]
+[ext_resource path="res://art/biomes/Ground Clutter/Rock3.png" type="Texture" id=21]
+[ext_resource path="res://art/biomes/Vegetation/Cactus3.png" type="Texture" id=22]
+[ext_resource path="res://art/biomes/Vegetation/Succulent1.png" type="Texture" id=23]
+[ext_resource path="res://art/biomes/Ground Clutter/Rock4.png" type="Texture" id=24]
+[ext_resource path="res://art/biomes/Vegetation/Cactus6.png" type="Texture" id=25]
+[ext_resource path="res://art/biomes/Ground Clutter/Rock1.png" type="Texture" id=26]
+[ext_resource path="res://art/biomes/Vegetation/Cactus4.png" type="Texture" id=27]
+[ext_resource path="res://art/biomes/Buildings/saloon.png" type="Texture" id=28]
+[ext_resource path="res://Coin.tscn" type="PackedScene" id=29]
+[ext_resource path="res://art/fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=30]
+[ext_resource path="res://art/foreground/New_platform.png" type="Texture" id=31]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 160, 14 )
+extents = Vector2( 8, 120 )
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 8, 90 )
+[sub_resource type="DynamicFont" id=2]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 30 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 8, 90 )
-
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 31, 4 )
-
-[sub_resource type="DynamicFont" id=5]
-font_data = ExtResource( 9 )
-
-[sub_resource type="SpriteFrames" id=6]
-animations = [ {
-"frames": [ ExtResource( 24 ), ExtResource( 26 ), ExtResource( 25 ), ExtResource( 37 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 34 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 27 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 66 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 97 ), ExtResource( 98 ), ExtResource( 99 ), ExtResource( 100 ), ExtResource( 101 ), ExtResource( 102 ), ExtResource( 103 ), ExtResource( 104 ), ExtResource( 105 ), ExtResource( 106 ), ExtResource( 107 ), ExtResource( 108 ), ExtResource( 109 ), ExtResource( 110 ), ExtResource( 111 ), ExtResource( 112 ), ExtResource( 113 ), ExtResource( 114 ), ExtResource( 115 ), ExtResource( 116 ), ExtResource( 117 ), ExtResource( 118 ), ExtResource( 119 ), ExtResource( 120 ), ExtResource( 121 ), ExtResource( 122 ), ExtResource( 123 ), ExtResource( 124 ), ExtResource( 125 ), ExtResource( 126 ), ExtResource( 127 ), ExtResource( 128 ), ExtResource( 129 ), ExtResource( 130 ), ExtResource( 131 ), ExtResource( 132 ), ExtResource( 133 ), ExtResource( 134 ), ExtResource( 135 ), ExtResource( 136 ), ExtResource( 137 ), ExtResource( 138 ), ExtResource( 139 ), ExtResource( 140 ), ExtResource( 141 ), ExtResource( 142 ), ExtResource( 143 ), ExtResource( 144 ), ExtResource( 145 ), ExtResource( 146 ), ExtResource( 147 ), ExtResource( 46 ), ExtResource( 93 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 88 ), ExtResource( 150 ), ExtResource( 151 ), ExtResource( 152 ), ExtResource( 153 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 148 ), ExtResource( 149 ), ExtResource( 94 ), ExtResource( 95 ), ExtResource( 96 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 92 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 154 ), ExtResource( 155 ), ExtResource( 156 ), ExtResource( 157 ), ExtResource( 158 ), ExtResource( 159 ), ExtResource( 160 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 289 ), ExtResource( 290 ), ExtResource( 291 ), ExtResource( 292 ), ExtResource( 293 ), ExtResource( 294 ), ExtResource( 295 ), ExtResource( 161 ), ExtResource( 162 ), ExtResource( 163 ), ExtResource( 164 ), ExtResource( 165 ), ExtResource( 166 ), ExtResource( 167 ), ExtResource( 168 ), ExtResource( 169 ), ExtResource( 170 ), ExtResource( 171 ), ExtResource( 172 ), ExtResource( 173 ), ExtResource( 174 ), ExtResource( 296 ), ExtResource( 297 ), ExtResource( 298 ), ExtResource( 299 ), ExtResource( 300 ), ExtResource( 301 ), ExtResource( 175 ), ExtResource( 302 ), ExtResource( 303 ), ExtResource( 304 ), ExtResource( 305 ), ExtResource( 306 ), ExtResource( 307 ), ExtResource( 308 ), ExtResource( 309 ), ExtResource( 310 ), ExtResource( 176 ), ExtResource( 177 ), ExtResource( 178 ), ExtResource( 311 ), ExtResource( 312 ), ExtResource( 313 ), ExtResource( 314 ), ExtResource( 315 ), ExtResource( 316 ), ExtResource( 317 ), ExtResource( 179 ), ExtResource( 180 ), ExtResource( 181 ), ExtResource( 182 ), ExtResource( 183 ), ExtResource( 184 ), ExtResource( 185 ), ExtResource( 186 ), ExtResource( 187 ), ExtResource( 188 ), ExtResource( 189 ), ExtResource( 190 ), ExtResource( 191 ), ExtResource( 192 ), ExtResource( 193 ), ExtResource( 194 ), ExtResource( 195 ), ExtResource( 196 ), ExtResource( 197 ), ExtResource( 198 ), ExtResource( 199 ), ExtResource( 200 ), ExtResource( 201 ), ExtResource( 202 ), ExtResource( 203 ), ExtResource( 204 ), ExtResource( 205 ), ExtResource( 206 ), ExtResource( 207 ), ExtResource( 208 ), ExtResource( 209 ), ExtResource( 210 ), ExtResource( 211 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 318 ), ExtResource( 319 ), ExtResource( 320 ), ExtResource( 321 ), ExtResource( 322 ), ExtResource( 323 ), ExtResource( 324 ), ExtResource( 325 ), ExtResource( 326 ), ExtResource( 327 ), ExtResource( 328 ), ExtResource( 212 ), ExtResource( 213 ), ExtResource( 214 ), ExtResource( 215 ), ExtResource( 216 ), ExtResource( 217 ), ExtResource( 218 ), ExtResource( 219 ), ExtResource( 220 ), ExtResource( 221 ), ExtResource( 222 ), ExtResource( 223 ), ExtResource( 224 ), ExtResource( 225 ), ExtResource( 226 ), ExtResource( 227 ), ExtResource( 228 ), ExtResource( 229 ), ExtResource( 230 ), ExtResource( 231 ), ExtResource( 232 ), ExtResource( 233 ), ExtResource( 234 ), ExtResource( 235 ), ExtResource( 236 ), ExtResource( 237 ), ExtResource( 238 ), ExtResource( 239 ), ExtResource( 240 ), ExtResource( 241 ), ExtResource( 242 ), ExtResource( 243 ), ExtResource( 244 ), ExtResource( 245 ), ExtResource( 246 ), ExtResource( 247 ), ExtResource( 248 ), ExtResource( 249 ), ExtResource( 250 ), ExtResource( 251 ), ExtResource( 252 ), ExtResource( 253 ), ExtResource( 254 ), ExtResource( 255 ), ExtResource( 256 ), ExtResource( 257 ), ExtResource( 258 ), ExtResource( 259 ), ExtResource( 260 ), ExtResource( 261 ), ExtResource( 262 ), ExtResource( 263 ), ExtResource( 264 ), ExtResource( 265 ), ExtResource( 266 ), ExtResource( 267 ), ExtResource( 268 ), ExtResource( 269 ), ExtResource( 270 ), ExtResource( 271 ), ExtResource( 272 ), ExtResource( 329 ), ExtResource( 330 ), ExtResource( 331 ), ExtResource( 332 ), ExtResource( 333 ), ExtResource( 334 ), ExtResource( 335 ), ExtResource( 336 ), ExtResource( 337 ), ExtResource( 338 ), ExtResource( 339 ), ExtResource( 340 ), ExtResource( 341 ), ExtResource( 342 ), ExtResource( 273 ), ExtResource( 274 ), ExtResource( 275 ), ExtResource( 276 ), ExtResource( 277 ), ExtResource( 278 ), ExtResource( 279 ), ExtResource( 280 ), ExtResource( 281 ), ExtResource( 282 ), ExtResource( 283 ), ExtResource( 284 ), ExtResource( 285 ), ExtResource( 286 ), ExtResource( 287 ), ExtResource( 288 ) ],
-"loop": true,
-"name": "default",
-"speed": 7.0
-} ]
+extents = Vector2( 27.3892, 2.48993 )
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 8 )
+world_bottom = 205
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( -1, -39 )
+[node name="ForegroundClutter" type="Node2D" parent="."]
+z_index = 10
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 0, -90 )
-current = true
+[node name="Skull-v1" type="Sprite" parent="ForegroundClutter"]
+position = Vector2( 172, 167 )
+texture = ExtResource( 13 )
+flip_h = true
 
-[node name="Background" type="Sprite" parent="."]
-position = Vector2( 0, -90 )
-z_index = -100
-texture = ExtResource( 1 )
+[node name="Rock-v2" type="Sprite" parent="ForegroundClutter"]
+position = Vector2( 375, 169 )
+texture = ExtResource( 17 )
+flip_h = true
+
+[node name="Rock-v3" type="Sprite" parent="ForegroundClutter"]
+position = Vector2( 798, 168 )
+rotation = -0.0116353
+texture = ExtResource( 21 )
+
+[node name="Cactus-v10" type="Sprite" parent="ForegroundClutter"]
+position = Vector2( 963, 147 )
+texture = ExtResource( 19 )
+
+[node name="Cactus-v4" type="Sprite" parent="ForegroundClutter"]
+position = Vector2( 1118, 165 )
+texture = ExtResource( 22 )
+
+[node name="Cactus-v1" type="Sprite" parent="ForegroundClutter"]
+position = Vector2( 285, 144 )
+texture = ExtResource( 19 )
+flip_h = true
+
+[node name="Cactus-v3" type="Sprite" parent="ForegroundClutter"]
+position = Vector2( 355, 161 )
+texture = ExtResource( 22 )
+flip_h = true
+
+[node name="Cactus-special" type="Sprite" parent="ForegroundClutter"]
+position = Vector2( 727, 164 )
+texture = ExtResource( 20 )
+
+[node name="Rock-v1" type="Sprite" parent="ForegroundClutter"]
+position = Vector2( 1190, 166 )
+texture = ExtResource( 26 )
 
 [node name="Ground" type="StaticBody2D" parent="."]
-position = Vector2( 0, -16 )
+position = Vector2( 0, 170 )
 
-[node name="Sprite" type="Sprite" parent="Ground"]
+[node name="Sprite" type="Sprite" parent="Ground" groups=["chunk_bounds"]]
+z_index = -50
 texture = ExtResource( 3 )
+centered = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
+visible = false
+polygon = PoolVector2Array( 0, 0, 58, 0, 59, 1, 71, 1, 72, 2, 79, 2, 80, 3, 87, 3, 88, 4, 130, 4, 131, 3, 143, 3, 144, 2, 151, 2, 152, 1, 160, 1, 161, 0, 260, 0, 261, 1, 268, 1, 269, 2, 276, 2, 277, 3, 285, 3, 286, 4, 311, 4, 312, 3, 332, 3, 333, 2, 341, 2, 342, 1, 372, 1, 373, 0, 400, 0, 400, 55, 0, 55 )
+
+[node name="Ground2" type="StaticBody2D" parent="."]
+position = Vector2( 400, 170 )
+
+[node name="Sprite" type="Sprite" parent="Ground2" groups=["chunk_bounds"]]
+z_index = -50
+texture = ExtResource( 3 )
+centered = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground2"]
+visible = false
+polygon = PoolVector2Array( 0, 0, 58, 0, 59, 1, 71, 1, 72, 2, 79, 2, 80, 3, 87, 3, 88, 4, 130, 4, 131, 3, 143, 3, 144, 2, 151, 2, 152, 1, 160, 1, 161, 0, 260, 0, 261, 1, 268, 1, 269, 2, 276, 2, 277, 3, 285, 3, 286, 4, 311, 4, 312, 3, 332, 3, 333, 2, 341, 2, 342, 1, 372, 1, 373, 0, 400, 0, 400, 55, 0, 55 )
+
+[node name="Ground3" type="StaticBody2D" parent="."]
+position = Vector2( 800, 170 )
+
+[node name="Sprite" type="Sprite" parent="Ground3" groups=["chunk_bounds"]]
+z_index = -50
+texture = ExtResource( 3 )
+centered = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground3"]
+visible = false
+polygon = PoolVector2Array( 0, 0, 58, 0, 59, 1, 71, 1, 72, 2, 79, 2, 80, 3, 87, 3, 88, 4, 130, 4, 131, 3, 143, 3, 144, 2, 151, 2, 152, 1, 160, 1, 161, 0, 260, 0, 261, 1, 268, 1, 269, 2, 276, 2, 277, 3, 285, 3, 286, 4, 311, 4, 312, 3, 332, 3, 333, 2, 341, 2, 342, 1, 372, 1, 373, 0, 400, 0, 400, 55, 0, 55 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 30, 150 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource( 12 )
+
+[node name="SkyLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0, 1 )
+motion_mirroring = Vector2( 400, 0 )
+
+[node name="Background" type="Sprite" parent="ParallaxBackground/SkyLayer"]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Sun" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.025, 1 )
+
+[node name="Sun" type="Sprite" parent="ParallaxBackground/Sun"]
+texture = ExtResource( 7 )
+centered = false
+offset = Vector2( -23, 75 )
+
+[node name="BotClouds" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.12, 1 )
+motion_mirroring = Vector2( 388, 0 )
+
+[node name="BotClouds" type="Sprite" parent="ParallaxBackground/BotClouds"]
+position = Vector2( 0, 78 )
+texture = ExtResource( 9 )
+centered = false
+
+[node name="MidClouds" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.16, 1 )
+motion_mirroring = Vector2( 392, 0 )
+
+[node name="MidClouds" type="Sprite" parent="ParallaxBackground/MidClouds"]
+position = Vector2( 0, 35 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="TopClouds" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.2, 1 )
+motion_mirroring = Vector2( 380, 0 )
+
+[node name="TopClouds" type="Sprite" parent="ParallaxBackground/TopClouds"]
+texture = ExtResource( 10 )
+centered = false
+
+[node name="FarLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.1, 1 )
+motion_mirroring = Vector2( 400, 0 )
+
+[node name="FarLayer" type="Sprite" parent="ParallaxBackground/FarLayer"]
+position = Vector2( 0, 113 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="MidLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.3, 1 )
+motion_mirroring = Vector2( 400, 0 )
+
+[node name="MidLayer" type="Sprite" parent="ParallaxBackground/MidLayer"]
+position = Vector2( 0, 124 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="NearLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.5, 1 )
+motion_mirroring = Vector2( 400, 0 )
+
+[node name="NearLayer" type="Sprite" parent="ParallaxBackground/NearLayer"]
+position = Vector2( 0, 138 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="Clutter" type="Node2D" parent="."]
+z_index = -40
+
+[node name="Cactus-v2" type="Sprite" parent="Clutter"]
+position = Vector2( 64, 144 )
+texture = ExtResource( 15 )
+flip_h = true
+
+[node name="Rock-v5" type="Sprite" parent="Clutter"]
+position = Vector2( 213, 168 )
+texture = ExtResource( 24 )
+flip_h = true
+
+[node name="Cactus-v8" type="Sprite" parent="Clutter"]
+position = Vector2( 852, 143 )
+texture = ExtResource( 15 )
+
+[node name="Bush-v1" type="Sprite" parent="Clutter"]
+position = Vector2( 92, 162 )
+texture = ExtResource( 14 )
+flip_h = true
+
+[node name="Bush-v2" type="Sprite" parent="Clutter"]
+position = Vector2( 996, 157 )
+texture = ExtResource( 14 )
+
+[node name="Bush-v3" type="Sprite" parent="Clutter"]
+position = Vector2( 668.39, 158.43 )
+texture = ExtResource( 14 )
+
+[node name="Grass-v1" type="Sprite" parent="Clutter"]
+position = Vector2( 244, 164 )
+texture = ExtResource( 18 )
+flip_h = true
+
+[node name="Grass-v2" type="Sprite" parent="Clutter"]
+position = Vector2( 714, 167 )
+texture = ExtResource( 18 )
+
+[node name="Grass2" type="Sprite" parent="Clutter"]
+position = Vector2( 12, 165 )
+texture = ExtResource( 18 )
+flip_h = true
+
+[node name="Cactus-v9" type="Sprite" parent="Clutter"]
+position = Vector2( 425.894, 153.002 )
+texture = ExtResource( 27 )
+flip_h = true
+
+[node name="Cactus-v7" type="Sprite" parent="Clutter"]
+position = Vector2( 259, 160 )
+texture = ExtResource( 16 )
+flip_h = true
+
+[node name="Cactus-v6" type="Sprite" parent="Clutter"]
+position = Vector2( 878, 166 )
+texture = ExtResource( 25 )
+
+[node name="Succulent-v1" type="Sprite" parent="Clutter"]
+position = Vector2( 746, 164 )
+texture = ExtResource( 23 )
+
+[node name="Succulent-v2" type="Sprite" parent="Clutter"]
+position = Vector2( 1164, 164 )
+texture = ExtResource( 23 )
+
+[node name="walls" type="StaticBody2D" parent="."]
+
+[node name="left" type="CollisionShape2D" parent="walls"]
+position = Vector2( -8, 112 )
 shape = SubResource( 1 )
 
-[node name="Walls" type="StaticBody2D" parent="."]
+[node name="right" type="CollisionShape2D" parent="walls"]
+position = Vector2( 1208, 112 )
+shape = SubResource( 1 )
 
-[node name="WallLeft" type="CollisionShape2D" parent="Walls"]
-position = Vector2( -168, -90 )
-shape = SubResource( 2 )
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+z_index = -10
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 168, -90 )
-shape = SubResource( 3 )
+[node name="Sprite" type="Sprite" parent="StaticBody2D"]
+position = Vector2( 612, 122 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 28 )
 
-[node name="Middle Platform" type="StaticBody2D" parent="."]
-position = Vector2( 0, -60 )
-
-[node name="Sprite" type="Sprite" parent="Middle Platform"]
-texture = ExtResource( 4 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Middle Platform"]
-shape = SubResource( 4 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( 610, 120 )
+polygon = PoolVector2Array( -57.8741, -0.173531, 61.9027, -0.115463, 61.8773, 2.84052, -57.9205, 2.65564 )
 one_way_collision = true
 
-[node name="Left Platform" type="StaticBody2D" parent="."]
-position = Vector2( -90, -95 )
-
-[node name="Sprite" type="Sprite" parent="Left Platform"]
-texture = ExtResource( 4 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Left Platform"]
-shape = SubResource( 4 )
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( 624.812, 148.417 )
+polygon = PoolVector2Array( -57.8741, -0.173531, -30.7905, 0.00924683, -30.6776, 2.66153, -57.9205, 2.65564 )
 one_way_collision = true
 
-[node name="Right Platform" type="StaticBody2D" parent="."]
-position = Vector2( 90, -95 )
-
-[node name="Sprite" type="Sprite" parent="Right Platform"]
-texture = ExtResource( 4 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Right Platform"]
-shape = SubResource( 4 )
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( 688.08, 148.335 )
+polygon = PoolVector2Array( -57.8741, -0.173531, -30.7905, 0.00924683, -30.6776, 2.66153, -57.9205, 2.65564 )
 one_way_collision = true
 
-[node name="Clouds" type="Sprite" parent="."]
-position = Vector2( 0, -150 )
-z_index = -50
-texture = ExtResource( 6 )
-region_enabled = true
-region_rect = Rect2( 0, 0, 320, 72 )
-script = ExtResource( 5 )
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( 610, 117 )
+polygon = PoolVector2Array( -51.9523, -0.116798, 55.979, -0.125145, 56.041, 2.7272, -51.8911, 2.70177 )
+one_way_collision = true
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( 610, 114 )
+polygon = PoolVector2Array( -45.8881, -0.213112, 49.9871, -0.0872955, 49.9406, 2.60916, -45.8881, 2.61115 )
+one_way_collision = true
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( 604, 162 )
+scale = Vector2( 0.908347, 0.990888 )
+polygon = PoolVector2Array( 23.5466, -0.236206, 31.8866, 8.77521, -14.2556, 8.74895, -5.97296, -0.183655 )
+one_way_collision = true
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( 616, 77 )
+scale = Vector2( 0.908347, 0.990888 )
+polygon = PoolVector2Array( -4.40363, -4.03679, 26.9202, 24.9678, -4.52374, 25.3769, -35.6931, 24.9048 )
+one_way_collision = true
 
 [node name="Coins" type="Node2D" parent="."]
 
-[node name="Coin" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( -90, -111 )
+[node name="Coin" parent="Coins" instance=ExtResource( 29 )]
+position = Vector2( 641.527, 141.066 )
+scale = Vector2( 1, 0.6 )
 
-[node name="Coin4" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 90, -111 )
+[node name="Coin4" parent="Coins" instance=ExtResource( 29 )]
+position = Vector2( 120.866, 165.754 )
+scale = Vector2( 1, 0.6 )
 
-[node name="Coin5" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( -131, -42 )
+[node name="Coin2" parent="Coins" instance=ExtResource( 29 )]
+position = Vector2( 574.22, 105.601 )
+scale = Vector2( 1, 0.6 )
 
-[node name="Coin6" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 123, -42 )
+[node name="Coin3" parent="Coins" instance=ExtResource( 29 )]
+position = Vector2( 611.22, 66.1514 )
+scale = Vector2( 1, 0.6 )
+
+[node name="Coin7" parent="Coins" instance=ExtResource( 29 )]
+position = Vector2( 240.748, 102.716 )
+scale = Vector2( 1, 0.6 )
+
+[node name="Coin5" parent="Coins" instance=ExtResource( 29 )]
+position = Vector2( 821.958, 41.2231 )
+scale = Vector2( 1, 0.6 )
+
+[node name="Coin6" parent="Coins" instance=ExtResource( 29 )]
+position = Vector2( 909.94, 165.865 )
+scale = Vector2( 1, 0.6 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -458,14 +359,89 @@ position = Vector2( 123, -42 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -6.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 2 )
 text = "0"
 align = 1
 valign = 2
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 0, -90 )
-z_index = -75
-frames = SubResource( 6 )
-frame = 154
-playing = true
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="Platform" type="StaticBody2D" parent="Platforms"]
+position = Vector2( 168.286, 149.023 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform"]
+position = Vector2( 7.03339, -10.4938 )
+shape = SubResource( 3 )
+one_way_collision = true
+
+[node name="Sprite" type="Sprite" parent="Platforms/Platform"]
+position = Vector2( 7.00841, -10.5051 )
+texture = ExtResource( 31 )
+
+[node name="Platform2" type="StaticBody2D" parent="Platforms"]
+position = Vector2( 233.757, 125.35 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform2"]
+position = Vector2( 7.03339, -10.4938 )
+shape = SubResource( 3 )
+one_way_collision = true
+
+[node name="Sprite" type="Sprite" parent="Platforms/Platform2"]
+position = Vector2( 7.00841, -10.5051 )
+texture = ExtResource( 31 )
+
+[node name="Platform3" type="StaticBody2D" parent="Platforms"]
+position = Vector2( 666.711, 63.3119 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform3"]
+position = Vector2( 7.03339, -10.4938 )
+shape = SubResource( 3 )
+one_way_collision = true
+
+[node name="Sprite" type="Sprite" parent="Platforms/Platform3"]
+position = Vector2( 7.00841, -10.5051 )
+texture = ExtResource( 31 )
+
+[node name="Platform4" type="StaticBody2D" parent="Platforms"]
+position = Vector2( 744.848, 83.0031 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform4"]
+position = Vector2( 7.03339, -10.4938 )
+shape = SubResource( 3 )
+one_way_collision = true
+
+[node name="Sprite" type="Sprite" parent="Platforms/Platform4"]
+position = Vector2( 7.00841, -10.5051 )
+texture = ExtResource( 31 )
+
+[node name="Platform5" type="StaticBody2D" parent="Platforms"]
+position = Vector2( 816.491, 63.9403 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform5"]
+position = Vector2( 7.03339, -10.4938 )
+shape = SubResource( 3 )
+one_way_collision = true
+
+[node name="Sprite" type="Sprite" parent="Platforms/Platform5"]
+position = Vector2( 7.00841, -10.5051 )
+texture = ExtResource( 31 )
+
+[node name="Platform6" type="StaticBody2D" parent="Platforms"]
+position = Vector2( 1049.69, 152.048 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform6"]
+position = Vector2( 7.03339, -10.4938 )
+shape = SubResource( 3 )
+one_way_collision = true
+
+[node name="Sprite" type="Sprite" parent="Platforms/Platform6"]
+position = Vector2( 7.00841, -10.5051 )
+texture = ExtResource( 31 )
+
+[node name="BackgroundClutter" type="Node2D" parent="."]
+z_index = -51
+
+[node name="Rock-v4" type="Sprite" parent="BackgroundClutter"]
+position = Vector2( 560.262, 163.978 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 26 )
