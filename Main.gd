@@ -10,15 +10,25 @@ export var world_bottom: int = 225
 
 var score: int = 0
 
+var _elapsed: float = 0.0
+var _shown_seconds: int = -1
+
 onready var _camera: Camera2D = $Player/Camera2D
 onready var _coins: Node2D = $Coins
 onready var _score_label: Label = $HUD/ScoreLabel
+onready var _timer_label: Label = $HUD/TimerLabel
 
 
 func _ready() -> void:
 	apply_camera_limits()
 	_connect_coins()
 	_refresh_score()
+	_refresh_timer()
+
+
+func _process(delta: float) -> void:
+	_elapsed += delta
+	_refresh_timer()
 
 
 # Each coin emits "collected" from CoinCollect.gd. Connecting by iteration
@@ -37,6 +47,17 @@ func _on_coin_collected() -> void:
 
 func _refresh_score() -> void:
 	_score_label.text = str(score)
+
+
+# Only rewrites the label when the whole second changes, rather than
+# rebuilding the string every frame.
+func _refresh_timer() -> void:
+	var total: int = int(_elapsed)
+	if total == _shown_seconds:
+		return
+
+	_shown_seconds = total
+	_timer_label.text = "%02d:%02d" % [total / 60, total % 60]
 
 
 # Call again after adding or removing ground chunks at runtime.
