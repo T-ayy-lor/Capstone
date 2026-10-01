@@ -1,3 +1,425 @@
-[gd_scene format=2]
+[gd_scene load_steps=33 format=2]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource path="res://art/biomes/Desert/Vegetation/Cactus1.png" type="Texture" id=1]
+[ext_resource path="res://art/biomes/Desert/Buildings/saloon.png" type="Texture" id=2]
+[ext_resource path="res://art/biomes/Desert/Bg & Foreground/Foreground.png" type="Texture" id=3]
+[ext_resource path="res://art/biomes/Desert/Bg & Foreground/Bg2.png" type="Texture" id=4]
+[ext_resource path="res://art/biomes/Desert/Vegetation/Cactus5.png" type="Texture" id=5]
+[ext_resource path="res://art/biomes/Desert/Ground Clutter/Rock4.png" type="Texture" id=6]
+[ext_resource path="res://art/biomes/Desert/Ground Clutter/Rock1.png" type="Texture" id=7]
+[ext_resource path="res://art/biomes/Desert/Vegetation/Bush1.png" type="Texture" id=8]
+[ext_resource path="res://art/biomes/Desert/Vegetation/Cactus2.png" type="Texture" id=9]
+[ext_resource path="res://art/biomes/Desert/Ground Clutter/Skull.png" type="Texture" id=10]
+[ext_resource path="res://art/biomes/Desert/Ground Clutter/Rock2.png" type="Texture" id=11]
+[ext_resource path="res://art/biomes/Desert/Ground Clutter/Rock3.png" type="Texture" id=12]
+[ext_resource path="res://art/biomes/Desert/Bg & Foreground/BG Sky.png" type="Texture" id=13]
+[ext_resource path="res://art/biomes/Desert/Bg & Foreground/Bg1.png" type="Texture" id=14]
+[ext_resource path="res://art/biomes/Desert/Bg & Foreground/Sun.png" type="Texture" id=15]
+[ext_resource path="res://art/biomes/Desert/Clouds/Bottom Clouds (farthest)/All Bot Clouds.png" type="Texture" id=16]
+[ext_resource path="res://art/biomes/Desert/Clouds/Top Clouds (closest)/All Top Clouds.png" type="Texture" id=17]
+[ext_resource path="res://art/biomes/Desert/Clouds/Mid Clouds/All Mid Clouds.png" type="Texture" id=18]
+[ext_resource path="res://entities/CloudDrift.gd" type="Script" id=19]
+[ext_resource path="res://art/biomes/Desert/Vegetation/Grass1.png" type="Texture" id=20]
+[ext_resource path="res://levels/level.gd" type="Script" id=21]
+[ext_resource path="res://art/foreground/New_platform.png" type="Texture" id=22]
+[ext_resource path="res://entities/Coin.tscn" type="PackedScene" id=23]
+[ext_resource path="res://art/biomes/Desert/Vegetation/Cactus3special.png" type="Texture" id=24]
+[ext_resource path="res://art/biomes/Desert/Bg & Foreground/Bg3.png" type="Texture" id=25]
+[ext_resource path="res://art/biomes/Desert/Vegetation/Cactus3.png" type="Texture" id=26]
+[ext_resource path="res://art/biomes/Desert/Vegetation/Succulent1.png" type="Texture" id=27]
+[ext_resource path="res://art/biomes/Desert/Vegetation/Cactus6.png" type="Texture" id=28]
+[ext_resource path="res://art/biomes/Desert/Vegetation/Cactus4.png" type="Texture" id=29]
+[ext_resource path="res://entities/Portal.tscn" type="PackedScene" id=30]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 120 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 27.3892, 2.48993 )
+
+[node name="Desert1" type="Node2D"]
+script = ExtResource( 21 )
+
+[node name="ForegroundClutter" type="Node2D" parent="."]
+z_index = 10
+
+[node name="Skull-v1" type="Sprite" parent="ForegroundClutter"]
+position = Vector2( 172, 167 )
+texture = ExtResource( 10 )
+flip_h = true
+
+[node name="Rock-v2" type="Sprite" parent="ForegroundClutter"]
+position = Vector2( 375, 169 )
+texture = ExtResource( 11 )
+flip_h = true
+
+[node name="Rock-v3" type="Sprite" parent="ForegroundClutter"]
+position = Vector2( 798, 168 )
+rotation = -0.0116353
+texture = ExtResource( 12 )
+
+[node name="Cactus-v10" type="Sprite" parent="ForegroundClutter"]
+position = Vector2( 963, 147 )
+texture = ExtResource( 1 )
+
+[node name="Cactus-v4" type="Sprite" parent="ForegroundClutter"]
+position = Vector2( 1118, 165 )
+texture = ExtResource( 26 )
+
+[node name="Cactus-v1" type="Sprite" parent="ForegroundClutter"]
+position = Vector2( 285, 144 )
+texture = ExtResource( 1 )
+flip_h = true
+
+[node name="Cactus-v3" type="Sprite" parent="ForegroundClutter"]
+position = Vector2( 355, 161 )
+texture = ExtResource( 26 )
+flip_h = true
+
+[node name="Cactus-special" type="Sprite" parent="ForegroundClutter"]
+position = Vector2( 727, 164 )
+texture = ExtResource( 24 )
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2( 0, 170 )
+
+[node name="Sprite" type="Sprite" parent="Ground" groups=["chunk_bounds"]]
+z_index = -50
+texture = ExtResource( 3 )
+centered = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
+polygon = PoolVector2Array( 0, 0, 58, 0, 59, 1, 71, 1, 72, 2, 79, 2, 80, 3, 86.9907, 2.98367, 88, 4, 130, 4, 131, 3, 143, 3, 144, 2, 151, 2, 152, 1, 160, 1, 161, 0, 260, 0, 261, 1, 268, 1, 269, 2, 276, 2, 277, 3, 285, 3, 286, 4, 311, 4, 312, 3, 332, 3, 333, 2, 341, 2, 342, 1, 372, 1, 373, 0, 400, 0, 400, 55, 0, 55 )
+
+[node name="Ground2" type="StaticBody2D" parent="."]
+position = Vector2( 400, 170 )
+
+[node name="Sprite" type="Sprite" parent="Ground2" groups=["chunk_bounds"]]
+z_index = -50
+texture = ExtResource( 3 )
+centered = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground2"]
+polygon = PoolVector2Array( 0, 0, 58, 0, 59, 1, 71, 1, 72, 2, 79, 2, 80, 3, 87, 3, 88, 4, 130, 4, 131, 3, 143, 3, 144, 2, 151, 2, 152, 1, 160, 1, 161, 0, 260, 0, 261, 1, 268, 1, 269, 2, 276.023, 1.96875, 277, 3, 284.875, 2.98438, 286, 4, 311, 4, 312, 3, 332, 3, 333, 2, 341, 2, 342, 1, 372, 1, 373, 0, 400, 0, 400, 55, 0, 55 )
+
+[node name="Ground3" type="StaticBody2D" parent="."]
+position = Vector2( 800, 170 )
+
+[node name="Sprite" type="Sprite" parent="Ground3" groups=["chunk_bounds"]]
+z_index = -50
+texture = ExtResource( 3 )
+centered = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground3"]
+polygon = PoolVector2Array( 0, 0, 58, 0, 59, 1, 71, 1, 72, 2, 79, 2, 80, 3, 87, 3, 88, 4, 130, 4, 131, 3, 143, 3, 144, 2, 151, 2, 152, 1, 160, 1, 161, 0, 260, 0, 261, 1, 268, 1, 269, 2, 276, 2, 277, 3, 285, 3, 286, 4, 311, 4, 312, 3, 332, 3, 333, 2, 341, 2, 342, 1, 372, 1, 373, 0, 400, 0, 400, 55, 0, 55 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource( 19 )
+
+[node name="SkyLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0, 1 )
+motion_mirroring = Vector2( 400, 0 )
+
+[node name="Background" type="Sprite" parent="ParallaxBackground/SkyLayer"]
+texture = ExtResource( 13 )
+centered = false
+
+[node name="Sun" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.025, 1 )
+
+[node name="Sun" type="Sprite" parent="ParallaxBackground/Sun"]
+texture = ExtResource( 15 )
+centered = false
+offset = Vector2( -23, 75 )
+
+[node name="BotClouds" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.12, 1 )
+motion_mirroring = Vector2( 388, 0 )
+
+[node name="BotClouds" type="Sprite" parent="ParallaxBackground/BotClouds"]
+position = Vector2( 0, 78 )
+texture = ExtResource( 16 )
+centered = false
+
+[node name="MidClouds" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.16, 1 )
+motion_mirroring = Vector2( 392, 0 )
+
+[node name="MidClouds" type="Sprite" parent="ParallaxBackground/MidClouds"]
+position = Vector2( 0, 35 )
+texture = ExtResource( 18 )
+centered = false
+
+[node name="TopClouds" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.2, 1 )
+motion_mirroring = Vector2( 380, 0 )
+
+[node name="TopClouds" type="Sprite" parent="ParallaxBackground/TopClouds"]
+texture = ExtResource( 17 )
+centered = false
+
+[node name="FarLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.1, 1 )
+motion_mirroring = Vector2( 400, 0 )
+
+[node name="FarLayer" type="Sprite" parent="ParallaxBackground/FarLayer"]
+position = Vector2( 0, 113 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="MidLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.3, 1 )
+motion_mirroring = Vector2( 400, 0 )
+
+[node name="MidLayer" type="Sprite" parent="ParallaxBackground/MidLayer"]
+position = Vector2( 0, 124 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="NearLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.5, 1 )
+motion_mirroring = Vector2( 400, 0 )
+
+[node name="NearLayer" type="Sprite" parent="ParallaxBackground/NearLayer"]
+position = Vector2( 0, 138 )
+texture = ExtResource( 25 )
+centered = false
+
+[node name="Clutter" type="Node2D" parent="."]
+z_index = -40
+
+[node name="Cactus-v2" type="Sprite" parent="Clutter"]
+position = Vector2( 64, 144 )
+texture = ExtResource( 9 )
+flip_h = true
+
+[node name="Rock-v5" type="Sprite" parent="Clutter"]
+position = Vector2( 213, 168 )
+texture = ExtResource( 6 )
+flip_h = true
+
+[node name="Cactus-v8" type="Sprite" parent="Clutter"]
+position = Vector2( 852, 143 )
+texture = ExtResource( 9 )
+
+[node name="Bush-v1" type="Sprite" parent="Clutter"]
+position = Vector2( 92, 162 )
+texture = ExtResource( 8 )
+flip_h = true
+
+[node name="Bush-v2" type="Sprite" parent="Clutter"]
+position = Vector2( 996, 157 )
+texture = ExtResource( 8 )
+
+[node name="Bush-v3" type="Sprite" parent="Clutter"]
+position = Vector2( 668.39, 158.43 )
+texture = ExtResource( 8 )
+
+[node name="Grass-v1" type="Sprite" parent="Clutter"]
+position = Vector2( 244, 164 )
+texture = ExtResource( 20 )
+flip_h = true
+
+[node name="Grass-v2" type="Sprite" parent="Clutter"]
+position = Vector2( 714, 167 )
+texture = ExtResource( 20 )
+
+[node name="Grass2" type="Sprite" parent="Clutter"]
+position = Vector2( 12, 165 )
+texture = ExtResource( 20 )
+flip_h = true
+
+[node name="Cactus-v9" type="Sprite" parent="Clutter"]
+position = Vector2( 425.894, 153.002 )
+texture = ExtResource( 29 )
+flip_h = true
+
+[node name="Cactus-v7" type="Sprite" parent="Clutter"]
+position = Vector2( 259, 160 )
+texture = ExtResource( 5 )
+flip_h = true
+
+[node name="Cactus-v6" type="Sprite" parent="Clutter"]
+position = Vector2( 878, 166 )
+texture = ExtResource( 28 )
+
+[node name="Succulent-v1" type="Sprite" parent="Clutter"]
+position = Vector2( 746, 164 )
+texture = ExtResource( 27 )
+
+[node name="Succulent-v2" type="Sprite" parent="Clutter"]
+position = Vector2( 1099.88, 167.309 )
+texture = ExtResource( 27 )
+
+[node name="walls" type="StaticBody2D" parent="."]
+
+[node name="left" type="CollisionShape2D" parent="walls"]
+position = Vector2( -8, 112 )
+shape = SubResource( 1 )
+
+[node name="right" type="CollisionShape2D" parent="walls"]
+position = Vector2( 1208, 112 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+z_index = -10
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D"]
+position = Vector2( 612, 122 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( 610, 120 )
+polygon = PoolVector2Array( -57.8741, -0.173531, 61.9027, -0.115463, 61.8773, 2.84052, -57.9205, 2.65564 )
+one_way_collision = true
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( 624.812, 148.417 )
+polygon = PoolVector2Array( -57.8741, -0.173531, -30.7905, 0.00924683, -30.6776, 2.66153, -57.9205, 2.65564 )
+one_way_collision = true
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( 688.08, 148.335 )
+polygon = PoolVector2Array( -57.8741, -0.173531, -30.7905, 0.00924683, -30.6776, 2.66153, -57.9205, 2.65564 )
+one_way_collision = true
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( 610, 117 )
+polygon = PoolVector2Array( -51.9523, -0.116798, 55.979, -0.125145, 56.041, 2.7272, -51.8911, 2.70177 )
+one_way_collision = true
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( 610, 114 )
+polygon = PoolVector2Array( -45.8881, -0.213112, 49.9871, -0.0872955, 49.9406, 2.60916, -45.8881, 2.61115 )
+one_way_collision = true
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( 604, 162 )
+scale = Vector2( 0.908347, 0.990888 )
+polygon = PoolVector2Array( 23.5466, -0.236206, 31.8866, 8.77521, -14.2556, 8.74895, -5.97296, -0.183655 )
+one_way_collision = true
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( 616, 77 )
+scale = Vector2( 0.908347, 0.990888 )
+polygon = PoolVector2Array( -4.40363, -4.03679, 26.9202, 24.9678, -4.52374, 25.3769, -35.6931, 24.9048 )
+one_way_collision = true
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="Coin" parent="Coins" groups=["coins"] instance=ExtResource( 23 )]
+position = Vector2( 641.527, 141.066 )
+scale = Vector2( 1, 0.6 )
+
+[node name="Coin4" parent="Coins" groups=["coins"] instance=ExtResource( 23 )]
+position = Vector2( 120.866, 165.754 )
+scale = Vector2( 1, 0.6 )
+
+[node name="Coin2" parent="Coins" groups=["coins"] instance=ExtResource( 23 )]
+position = Vector2( 574.22, 105.601 )
+scale = Vector2( 1, 0.6 )
+
+[node name="Coin3" parent="Coins" groups=["coins"] instance=ExtResource( 23 )]
+position = Vector2( 611.22, 66.1514 )
+scale = Vector2( 1, 0.6 )
+
+[node name="Coin7" parent="Coins" groups=["coins"] instance=ExtResource( 23 )]
+position = Vector2( 240.748, 102.716 )
+scale = Vector2( 1, 0.6 )
+
+[node name="Coin5" parent="Coins" groups=["coins"] instance=ExtResource( 23 )]
+position = Vector2( 821.958, 41.2231 )
+scale = Vector2( 1, 0.6 )
+
+[node name="Coin6" parent="Coins" groups=["coins"] instance=ExtResource( 23 )]
+position = Vector2( 909.94, 165.865 )
+scale = Vector2( 1, 0.6 )
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="Platform" type="StaticBody2D" parent="Platforms"]
+position = Vector2( 168.286, 149.023 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform"]
+position = Vector2( 7.03339, -10.4938 )
+shape = SubResource( 3 )
+one_way_collision = true
+
+[node name="Sprite" type="Sprite" parent="Platforms/Platform"]
+position = Vector2( 7.00841, -10.5051 )
+texture = ExtResource( 22 )
+
+[node name="Platform2" type="StaticBody2D" parent="Platforms"]
+position = Vector2( 233.757, 125.35 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform2"]
+position = Vector2( 7.03339, -10.4938 )
+shape = SubResource( 3 )
+one_way_collision = true
+
+[node name="Sprite" type="Sprite" parent="Platforms/Platform2"]
+position = Vector2( 7.00841, -10.5051 )
+texture = ExtResource( 22 )
+
+[node name="Platform3" type="StaticBody2D" parent="Platforms"]
+position = Vector2( 666.711, 63.3119 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform3"]
+position = Vector2( 7.03339, -10.4938 )
+shape = SubResource( 3 )
+one_way_collision = true
+
+[node name="Sprite" type="Sprite" parent="Platforms/Platform3"]
+position = Vector2( 7.00841, -10.5051 )
+texture = ExtResource( 22 )
+
+[node name="Platform4" type="StaticBody2D" parent="Platforms"]
+position = Vector2( 744.848, 83.0031 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform4"]
+position = Vector2( 7.03339, -10.4938 )
+shape = SubResource( 3 )
+one_way_collision = true
+
+[node name="Sprite" type="Sprite" parent="Platforms/Platform4"]
+position = Vector2( 7.00841, -10.5051 )
+texture = ExtResource( 22 )
+
+[node name="Platform5" type="StaticBody2D" parent="Platforms"]
+position = Vector2( 816.491, 63.9403 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform5"]
+position = Vector2( 7.03339, -10.4938 )
+shape = SubResource( 3 )
+one_way_collision = true
+
+[node name="Sprite" type="Sprite" parent="Platforms/Platform5"]
+position = Vector2( 7.00841, -10.5051 )
+texture = ExtResource( 22 )
+
+[node name="Platform6" type="StaticBody2D" parent="Platforms"]
+position = Vector2( 1049.69, 152.048 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform6"]
+position = Vector2( 7.03339, -10.4938 )
+shape = SubResource( 3 )
+one_way_collision = true
+
+[node name="Sprite" type="Sprite" parent="Platforms/Platform6"]
+position = Vector2( 7.00841, -10.5051 )
+texture = ExtResource( 22 )
+
+[node name="BackgroundClutter" type="Node2D" parent="."]
+z_index = -51
+
+[node name="Rock-v4" type="Sprite" parent="BackgroundClutter"]
+position = Vector2( 560.262, 163.978 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 7 )
+
+[node name="SpawnPoint" type="Position2D" parent="."]
+position = Vector2( 29.594, 143.94 )
+
+[node name="Portal" parent="." instance=ExtResource( 30 )]
+position = Vector2( 1165.85, 142.545 )

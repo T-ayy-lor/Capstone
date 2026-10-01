@@ -1,33 +1,35 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=33 format=2]
 
-[ext_resource path="res://CloudDrift.gd" type="Script" id=1]
-[ext_resource path="res://art/biomes/Bg & Foreground/BG Sky.png" type="Texture" id=3]
-[ext_resource path="res://art/biomes/Bg & Foreground/Bg1.png" type="Texture" id=4]
-[ext_resource path="res://art/biomes/Bg & Foreground/Sun.png" type="Texture" id=5]
-[ext_resource path="res://art/biomes/Clouds/Bottom Clouds (farthest)/All Bot Clouds.png" type="Texture" id=6]
-[ext_resource path="res://art/biomes/Clouds/Top Clouds (closest)/All Top Clouds.png" type="Texture" id=7]
-[ext_resource path="res://art/biomes/Clouds/Mid Clouds/All Mid Clouds.png" type="Texture" id=8]
-[ext_resource path="res://art/biomes/Ground Clutter/Skull.png" type="Texture" id=9]
-[ext_resource path="res://art/biomes/Vegetation/Bush1.png" type="Texture" id=10]
-[ext_resource path="res://art/biomes/Vegetation/Cactus2.png" type="Texture" id=11]
-[ext_resource path="res://art/biomes/Vegetation/Cactus5.png" type="Texture" id=12]
-[ext_resource path="res://art/biomes/Ground Clutter/Rock2.png" type="Texture" id=13]
-[ext_resource path="res://art/biomes/Vegetation/Grass1.png" type="Texture" id=14]
-[ext_resource path="res://art/biomes/Vegetation/Cactus1.png" type="Texture" id=15]
-[ext_resource path="res://art/biomes/Vegetation/Cactus3special.png" type="Texture" id=16]
-[ext_resource path="res://art/biomes/Ground Clutter/Rock3.png" type="Texture" id=17]
-[ext_resource path="res://art/biomes/Vegetation/Cactus3.png" type="Texture" id=18]
-[ext_resource path="res://art/biomes/Vegetation/Succulent1.png" type="Texture" id=19]
-[ext_resource path="res://art/biomes/Ground Clutter/Rock4.png" type="Texture" id=20]
-[ext_resource path="res://art/biomes/Vegetation/Cactus6.png" type="Texture" id=21]
-[ext_resource path="res://art/biomes/Ground Clutter/Rock1.png" type="Texture" id=22]
-[ext_resource path="res://art/biomes/Vegetation/Cactus4.png" type="Texture" id=23]
-[ext_resource path="res://art/biomes/Buildings/saloon.png" type="Texture" id=24]
+[ext_resource path="res://entities/CloudDrift.gd" type="Script" id=1]
+[ext_resource path="res://levels/level.gd" type="Script" id=2]
+[ext_resource path="res://art/biomes/Desert/Bg & Foreground/BG Sky.png" type="Texture" id=3]
+[ext_resource path="res://art/biomes/Desert/Bg & Foreground/Bg1.png" type="Texture" id=4]
+[ext_resource path="res://art/biomes/Desert/Bg & Foreground/Sun.png" type="Texture" id=5]
+[ext_resource path="res://art/biomes/Desert/Clouds/Bottom Clouds (farthest)/All Bot Clouds.png" type="Texture" id=6]
+[ext_resource path="res://art/biomes/Desert/Clouds/Top Clouds (closest)/All Top Clouds.png" type="Texture" id=7]
+[ext_resource path="res://art/biomes/Desert/Clouds/Mid Clouds/All Mid Clouds.png" type="Texture" id=8]
+[ext_resource path="res://art/biomes/Desert/Ground Clutter/Skull.png" type="Texture" id=9]
+[ext_resource path="res://art/biomes/Desert/Vegetation/Bush1.png" type="Texture" id=10]
+[ext_resource path="res://art/biomes/Desert/Vegetation/Cactus2.png" type="Texture" id=11]
+[ext_resource path="res://art/biomes/Desert/Vegetation/Cactus5.png" type="Texture" id=12]
+[ext_resource path="res://art/biomes/Desert/Ground Clutter/Rock2.png" type="Texture" id=13]
+[ext_resource path="res://art/biomes/Desert/Vegetation/Grass1.png" type="Texture" id=14]
+[ext_resource path="res://art/biomes/Desert/Vegetation/Cactus1.png" type="Texture" id=15]
+[ext_resource path="res://art/biomes/Desert/Vegetation/Cactus3special.png" type="Texture" id=16]
+[ext_resource path="res://art/biomes/Desert/Ground Clutter/Rock3.png" type="Texture" id=17]
+[ext_resource path="res://art/biomes/Desert/Vegetation/Cactus3.png" type="Texture" id=18]
+[ext_resource path="res://art/biomes/Desert/Vegetation/Succulent1.png" type="Texture" id=19]
+[ext_resource path="res://art/biomes/Desert/Ground Clutter/Rock4.png" type="Texture" id=20]
+[ext_resource path="res://art/biomes/Desert/Vegetation/Cactus6.png" type="Texture" id=21]
+[ext_resource path="res://art/biomes/Desert/Ground Clutter/Rock1.png" type="Texture" id=22]
+[ext_resource path="res://art/biomes/Desert/Vegetation/Cactus4.png" type="Texture" id=23]
+[ext_resource path="res://art/biomes/Desert/Buildings/saloon.png" type="Texture" id=24]
+[ext_resource path="res://entities/Portal.tscn" type="PackedScene" id=25]
 [ext_resource path="res://art/foreground/New_platform.png" type="Texture" id=26]
-[ext_resource path="res://art/biomes/Bg & Foreground/Foreground.png" type="Texture" id=27]
-[ext_resource path="res://art/biomes/Bg & Foreground/Bg2.png" type="Texture" id=28]
-[ext_resource path="res://art/biomes/Bg & Foreground/Bg3.png" type="Texture" id=29]
-[ext_resource path="res://Coin.tscn" type="PackedScene" id=31]
+[ext_resource path="res://art/biomes/Desert/Bg & Foreground/Foreground.png" type="Texture" id=27]
+[ext_resource path="res://art/biomes/Desert/Bg & Foreground/Bg2.png" type="Texture" id=28]
+[ext_resource path="res://art/biomes/Desert/Bg & Foreground/Bg3.png" type="Texture" id=29]
+[ext_resource path="res://entities/Coin.tscn" type="PackedScene" id=31]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 120 )
@@ -36,6 +38,7 @@ extents = Vector2( 8, 120 )
 extents = Vector2( 27.3892, 2.48993 )
 
 [node name="Desert1" type="Node2D"]
+script = ExtResource( 2 )
 
 [node name="ForegroundClutter" type="Node2D" parent="."]
 z_index = 10
@@ -305,31 +308,31 @@ one_way_collision = true
 
 [node name="Coins" type="Node2D" parent="."]
 
-[node name="Coin" parent="Coins" instance=ExtResource( 31 )]
+[node name="Coin" parent="Coins" groups=["coins"] instance=ExtResource( 31 )]
 position = Vector2( 641.527, 141.066 )
 scale = Vector2( 1, 0.6 )
 
-[node name="Coin4" parent="Coins" instance=ExtResource( 31 )]
+[node name="Coin4" parent="Coins" groups=["coins"] instance=ExtResource( 31 )]
 position = Vector2( 120.866, 165.754 )
 scale = Vector2( 1, 0.6 )
 
-[node name="Coin2" parent="Coins" instance=ExtResource( 31 )]
+[node name="Coin2" parent="Coins" groups=["coins"] instance=ExtResource( 31 )]
 position = Vector2( 574.22, 105.601 )
 scale = Vector2( 1, 0.6 )
 
-[node name="Coin3" parent="Coins" instance=ExtResource( 31 )]
+[node name="Coin3" parent="Coins" groups=["coins"] instance=ExtResource( 31 )]
 position = Vector2( 611.22, 66.1514 )
 scale = Vector2( 1, 0.6 )
 
-[node name="Coin7" parent="Coins" instance=ExtResource( 31 )]
+[node name="Coin7" parent="Coins" groups=["coins"] instance=ExtResource( 31 )]
 position = Vector2( 240.748, 102.716 )
 scale = Vector2( 1, 0.6 )
 
-[node name="Coin5" parent="Coins" instance=ExtResource( 31 )]
+[node name="Coin5" parent="Coins" groups=["coins"] instance=ExtResource( 31 )]
 position = Vector2( 821.958, 41.2231 )
 scale = Vector2( 1, 0.6 )
 
-[node name="Coin6" parent="Coins" instance=ExtResource( 31 )]
+[node name="Coin6" parent="Coins" groups=["coins"] instance=ExtResource( 31 )]
 position = Vector2( 909.94, 165.865 )
 scale = Vector2( 1, 0.6 )
 
@@ -416,3 +419,7 @@ scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 22 )
 
 [node name="SpawnPoint" type="Position2D" parent="."]
+position = Vector2( 29.594, 143.94 )
+
+[node name="Portal" parent="." instance=ExtResource( 25 )]
+position = Vector2( 1165.85, 142.545 )
