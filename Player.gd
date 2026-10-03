@@ -4,6 +4,8 @@ export var speed: float = 60.0
 export var jump_force: float = 220.0
 export var gravity: float = 700.0
 
+var gravitySlowed: bool = false
+
 var velocity: Vector2 = Vector2.ZERO
 
 onready var sprite: AnimatedSprite = $AnimatedSprite
@@ -17,7 +19,10 @@ func _physics_process(delta: float) -> void:
 		direction -= 1.0
 
 	velocity.x = direction * speed
-	velocity.y += gravity * delta
+	if velocity.y > 0 and gravitySlowed:
+		velocity.y += (gravity / 5.5) * delta
+	else:
+		velocity.y += gravity * delta
 
 	if is_on_floor() and Input.is_action_just_pressed("jump"):
 		velocity.y = -jump_force
@@ -26,7 +31,9 @@ func _physics_process(delta: float) -> void:
 
 	_update_animation(direction)
 
-
+func _ready():
+	$Health.connect("healthEmpty", self, "whenhpEmpty")
+	
 func _update_animation(direction: float) -> void:
 	if direction != 0.0:
 		sprite.flip_h = direction < 0.0
@@ -37,3 +44,10 @@ func _update_animation(direction: float) -> void:
 
 	if sprite.animation != next_anim:
 		sprite.play(next_anim)
+
+func whenhpEmpty():
+	isDed()
+
+func isDed():
+	queue_free()
+
