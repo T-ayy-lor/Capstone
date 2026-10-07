@@ -1,0 +1,97 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://levels/MiniGames/MiniGame1.gd" type="Script" id=1]
+[ext_resource path="res://entities/portals/Portal.tscn" type="PackedScene" id=30]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 22.75, 10 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 35.8333, 24.875 )
+
+[node name="Minigame1Root" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="SpawnPoint" type="Position2D" parent="."]
+
+[node name="Ground" type="StaticBody2D" parent="SpawnPoint"]
+position = Vector2( 0, 90 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnPoint/Ground"]
+position = Vector2( 181, 84 )
+scale = Vector2( 10, 0.3 )
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="SpawnPoint/Ground"]
+margin_left = 61.0
+margin_top = 80.0
+margin_right = 408.0
+margin_bottom = 198.0
+color = Color( 0.592157, 0.592157, 0.592157, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="SpawnPoint/Ground"]
+show_behind_parent = true
+light_mask = 4
+margin_left = -298.0
+margin_top = -182.0
+margin_right = 368.0
+margin_bottom = 193.0
+
+[node name="ColorRect3" type="ColorRect" parent="SpawnPoint/Ground"]
+show_behind_parent = true
+light_mask = 4
+margin_left = 368.0
+margin_top = -342.0
+margin_right = 1034.0
+margin_bottom = 33.0
+
+[node name="ColorRect4" type="ColorRect" parent="SpawnPoint/Ground"]
+show_behind_parent = true
+light_mask = 4
+margin_left = 399.0
+margin_top = -177.0
+margin_right = 1075.0
+margin_bottom = 198.0
+
+[node name="Water" type="Area2D" parent="."]
+position = Vector2( -1, -3 )
+scale = Vector2( 3, 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Water"]
+position = Vector2( -2.83333, 33.2083 )
+shape = SubResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="Water"]
+show_behind_parent = true
+margin_left = -101.0
+margin_top = -28.0
+margin_right = 74.0
+margin_bottom = 97.0
+color = Color( 0.156863, 0.223529, 0.576471, 1 )
+
+[node name="IceBlock" type="ColorRect" parent="."]
+margin_left = -32.0
+margin_top = 99.0
+margin_right = 32.0
+margin_bottom = 152.0
+color = Color( 0.141176, 0.643137, 0.72549, 1 )
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="MashLabel" type="Label" parent="HUD"]
+margin_left = 106.0
+margin_top = 38.0
+margin_right = 145.0
+margin_bottom = 53.0
+text = "text"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="ExitPoint" type="Position2D" parent="."]
+position = Vector2( 275, 115 )
+
+[node name="Portal" parent="." instance=ExtResource( 30 )]
+position = Vector2( 383, 147 )
+
+[connection signal="body_entered" from="Water" to="." method="_on_Water_body_entered"]
